@@ -1,0 +1,34 @@
+BDD Style test cases
+
+# Sum App.feature
+Feature: Sum App
+	I want to test the behavior of a sum app
+
+Scenario Outline: Add two positive integers
+	Given I have a Sum App
+	When I add 5 to 7
+	Then the result should be 12
+
+Scenario Outline: Add two negative integers
+	Given I have a Sum App
+	When I add -5 to -7
+	Then the result should be -12
+
+Scenario Outline: Add one number with blank 
+	Given I have a Sum App
+	When I add -5 to 
+	Then the result should be "One or more fields are empty"
+
+
+
+Scenario Outline: Add non integer values 
+	Given I have a Sum App
+	When I add -5.2 to 2.4
+	Then the result should be "Only integers are allowed"
+
+
+Scenario Outline: Check for indicator when app is doing the sum 
+	Given I have a Sum App
+	When I add -5.2 to 2.4
+	Then the result should be Loading Indicator should be visible
+
